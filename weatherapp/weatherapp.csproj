@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\CloudIcons\Clear.png" />
+    <None Remove="Resources\CloudIcons\clearnight.png" />
+    <None Remove="Resources\CloudIcons\Cloudy.png" />
+    <None Remove="Resources\CloudIcons\Drizzle.png" />
+    <None Remove="Resources\CloudIcons\Drizzlenight.png" />
+    <None Remove="Resources\CloudIcons\Fog.png" />
+    <None Remove="Resources\CloudIcons\Freezingrain.png" />
+    <None Remove="Resources\CloudIcons\Haze.png" />
+    <None Remove="Resources\CloudIcons\Heavysnow.png" />
+    <None Remove="Resources\CloudIcons\partlycloudy.png" />
+    <None Remove="Resources\CloudIcons\partycloudynight.png" />
+    <None Remove="Resources\CloudIcons\Rain.png" />
+    <None Remove="Resources\CloudIcons\Snow.png" />
+    <None Remove="Resources\CloudIcons\Sunrise.png" />
+    <None Remove="Resources\CloudIcons\Sunset.png" />
+    <None Remove="Resources\CloudIcons\Thunderstorm.png" />
+    <None Remove="Resources\CloudIcons\Windy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\CloudIcons\Clear.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\clearnight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Cloudy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Drizzle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Drizzlenight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Fog.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Freezingrain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Haze.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Heavysnow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\partlycloudy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\partycloudynight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Rain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Snow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Sunrise.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Sunset.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Thunderstorm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloudIcons\Windy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Weatherbg\" />
+  </ItemGroup>
+
+</Project>
