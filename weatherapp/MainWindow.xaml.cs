@@ -29,11 +29,21 @@ namespace weatherapp
             settemp(true);
         }
 
+        private void ImageScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var scrollViewer = sender as ScrollViewer;
+            if (scrollViewer != null)
+            {
+                scrollViewer.ScrollToHorizontalOffset(scrollViewer.HorizontalOffset - e.Delta);
+                e.Handled = true;
+            }
+        }
+
         public async void setlocation()
         {
             var location = await LocationApi.GetLocationAsync();
             string city = location.City;
-            WLocation.Text = city;
+            Location.Text = city;
         }
 
         public async void settemp(bool Celsius)
@@ -41,10 +51,10 @@ namespace weatherapp
             var weatherinfo = await WeatherApi.GetWeatherInfo();
             if (Celsius)
             {
-                Temprature.Text = weatherinfo.temp_c;
+                Temperature.Text = weatherinfo.temp_c;
             } else
             {
-                Temprature.Text = weatherinfo.temp_f;
+                Temperature.Text = weatherinfo.temp_f;
             }
         }
     }

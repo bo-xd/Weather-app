@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherapp"
         mc:Ignorable="d"
-        Title="Weather" Height="650" Width="400">
+        Title="Weather" Height="500" Width="350">
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,13 +15,31 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="Daily" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8" FontSize="6">MY LOCATION</TextBlock>
-            <TextBlock x:Name="WLocation" HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8" FontSize="12">Placeholder</TextBlock>
-            <TextBlock x:Name ="Temprature" HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8">14°</TextBlock>
+            <TextBlock x:Name="Location" HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8" FontSize="12">Placeholder</TextBlock>
+            <TextBlock x:Name="Temperature" HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8">graden°</TextBlock>
             <TextBlock HorizontalAlignment="Center" Foreground="Cornsilk" Opacity="0.8">Feels like 10°</TextBlock>
         </StackPanel>
+        <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,20,0,20" Opacity="0.6" Background="#4C4C4D" Width="233" CornerRadius="3">
+            <StackPanel x:Name="Monthinfo">
+                <TextBlock x:Name="Info" Foreground="Cornsilk" Opacity="0.8">Info about today's weather</TextBlock>
+                <ScrollViewer x:Name="ImageScrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden" PreviewMouseWheel="ImageScrollViewer_PreviewMouseWheel" HorizontalAlignment="Center">
+                    <WrapPanel Orientation="Horizontal">
+                        <Image Source="/Resources/CloudIcons/Clear.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Cloudy.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Drizzle.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Sunset.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Snow.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Heavysnow.png" Width="22" Height="22"/>
+                        <Image Source="/Resources/CloudIcons/Sunset.png" Width="22" Height="22"/>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
