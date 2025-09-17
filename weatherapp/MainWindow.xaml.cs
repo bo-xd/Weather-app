@@ -29,7 +29,7 @@ namespace weatherapp
 
         public async void main(object sender, RoutedEventArgs e)
         {
-            settemp(true);
+            await LoadWeatherData();
         }
 
         private async System.Threading.Tasks.Task LoadWeatherData()
