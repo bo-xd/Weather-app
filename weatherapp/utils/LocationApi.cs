@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace weatherapp.utils
 {
-    internal class LocationApi
+    public class LocationApi
     {
         public class LocationResult
         {
@@ -16,17 +16,16 @@ namespace weatherapp.utils
             public double Lon { get; set; }
         }
 
-        public static async Task<LocationResult?> GetLocationAsync()
+        public static async Task<LocationResult?> GetLocation()
         {
-            var response = await RequestLib.SendRequest("http://ip-api.com/json");
+            var response = await RequestUtil.SendRequest("https://api.ipbase.com/v1/json/");
             var json = await response.Content.ReadAsStringAsync();
 
-            // Parse Location info
-            var City = RequestLib.parsejsonString(json, "city");
-            var Region = RequestLib.parsejsonString(json, "regionName");
-            var Country = RequestLib.parsejsonString(json, "country");
-            var Lat = RequestLib.parsejsonDouble(json, "lat");
-            var Lon = RequestLib.parsejsonDouble(json, "lon");
+            var City = JsonUtil.parsejson<string>(json, "city");
+            var Region = JsonUtil.parsejson<string>(json, "region_name");
+            var Country = JsonUtil.parsejson<string>(json, "country_name");
+            var Lat = JsonUtil.parsejson<double>(json, "latitude");
+            var Lon = JsonUtil.parsejson<double>(json, "longitude");
 
             return new LocationResult
             {
