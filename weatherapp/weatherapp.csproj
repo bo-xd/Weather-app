@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\Weatherbg\NewFolder\**" />
+    <EmbeddedResource Remove="Resources\Weatherbg\NewFolder\**" />
+    <None Remove="Resources\Weatherbg\NewFolder\**" />
+    <Page Remove="Resources\Weatherbg\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\CloudIcons\Clear.png" />
     <None Remove="Resources\CloudIcons\clearnight.png" />
     <None Remove="Resources\CloudIcons\Cloudy.png" />
@@ -26,6 +33,7 @@
     <None Remove="Resources\CloudIcons\Sunset.png" />
     <None Remove="Resources\CloudIcons\Thunderstorm.png" />
     <None Remove="Resources\CloudIcons\Windy.png" />
+    <None Remove="Resources\Weatherbg\sky.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,10 +88,9 @@
     <Resource Include="Resources\CloudIcons\Windy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Weatherbg\" />
+    <Resource Include="Resources\Weatherbg\sky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
