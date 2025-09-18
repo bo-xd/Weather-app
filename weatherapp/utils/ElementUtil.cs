@@ -7,7 +7,7 @@ using System.Windows.Shapes;
 
 namespace weatherapp.utils
 {
-    public class CreationUtil
+    public class ElementUtil
     {
 
         public static TextBlock CreateTextBlock(string text, Brush foreground, double fontSize, FontWeight fontWeight, HorizontalAlignment horizontal, Thickness margin)

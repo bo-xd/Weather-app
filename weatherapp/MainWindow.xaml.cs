@@ -167,12 +167,12 @@ namespace weatherapp
 
                         System.Diagnostics.Debug.WriteLine($"Adding hour: {time}, Temp: {temp}, Condition: {condition}");
 
-                        var hourlyItem = CreationUtil.CreateStackPanel(Orientation.Vertical, 50, new Thickness(4, 0, 4, 0));
-                        var timeText = CreationUtil.CreateTextBlock(time, Brushes.Black, 12, FontWeights.Medium, HorizontalAlignment.Center, new Thickness(0, 0, 0, 6));
+                        var hourlyItem = ElementUtil.CreateStackPanel(Orientation.Vertical, 50, new Thickness(4, 0, 4, 0));
+                        var timeText = ElementUtil.CreateTextBlock(time, Brushes.Black, 12, FontWeights.Medium, HorizontalAlignment.Center, new Thickness(0, 0, 0, 6));
 
-                        var weatherIcon = CreationUtil.CreateImage(iconPath, 28, 28, HorizontalAlignment.Center, new Thickness(0,0,0,6));
+                        var weatherIcon = ElementUtil.CreateImage(iconPath, 28, 28, HorizontalAlignment.Center, new Thickness(0,0,0,6));
 
-                        var tempText = CreationUtil.CreateTextBlock(temp, Brushes.Black, 14, FontWeights.SemiBold, HorizontalAlignment.Center, new Thickness(0));
+                        var tempText = ElementUtil.CreateTextBlock(temp, Brushes.Black, 14, FontWeights.SemiBold, HorizontalAlignment.Center, new Thickness(0));
 
                         hourlyItem.Children.Add(timeText);
                         hourlyItem.Children.Add(weatherIcon);
@@ -183,7 +183,7 @@ namespace weatherapp
                         var itemIndex = hourlyForecastPanel.Children.Count - 1;
                         if (itemIndex < (weatherInfo.hourlyForecast.Take(6).Count() * 2) - 2)
                         {
-                            var separator = CreationUtil.CreateRectangle(0.5, 60, new SolidColorBrush(Color.FromArgb(64, 0, 0, 0)), VerticalAlignment.Center, new Thickness(8, 0, 0, 8));
+                            var separator = ElementUtil.CreateRectangle(0.5, 60, new SolidColorBrush(Color.FromArgb(64, 0, 0, 0)), VerticalAlignment.Center, new Thickness(8, 0, 0, 8));
 
                             hourlyForecastPanel.Children.Add(separator);
                         }
