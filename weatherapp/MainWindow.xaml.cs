@@ -1,17 +1,10 @@
-﻿using System.Text;
-using System.Windows;
-using weatherapp.utils;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Security.Cryptography.X509Certificates;
-using System;
-using System.Linq;
+using weatherapp.utils;
 
 namespace weatherapp
 {
@@ -81,7 +74,7 @@ namespace weatherapp
             }
         }
 
-        public void settemp(bool Celsius, WeatherApi.WeatherInfo weatherInfo)
+        public void     settemp(bool Celsius, WeatherApi.WeatherInfo weatherInfo)
         {
             if (weatherInfo != null)
             {
@@ -174,40 +167,12 @@ namespace weatherapp
 
                         System.Diagnostics.Debug.WriteLine($"Adding hour: {time}, Temp: {temp}, Condition: {condition}");
 
-                        var hourlyItem = new StackPanel
-                        {
-                            Orientation = Orientation.Vertical,
-                            Width = 50,
-                            Margin = new Thickness(4, 0, 4, 0)
-                        };
+                        var hourlyItem = CreationUtil.CreateStackPanel(Orientation.Vertical, 50, new Thickness(4, 0, 4, 0));
+                        var timeText = CreationUtil.CreateTextBlock(time, Brushes.Black, 12, FontWeights.Medium, HorizontalAlignment.Center, new Thickness(0, 0, 0, 6));
 
-                        var timeText = new TextBlock
-                        {
-                            Text = time,
-                            Foreground = Brushes.Black,
-                            FontSize = 12,
-                            FontWeight = FontWeights.Medium,
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            Margin = new Thickness(0, 0, 0, 6)
-                        };
+                        var weatherIcon = CreationUtil.CreateImage(iconPath, 28, 28, HorizontalAlignment.Center, new Thickness(0,0,0,6));
 
-                        var weatherIcon = new Image
-                        {
-                            Source = new BitmapImage(new Uri(iconPath, UriKind.Relative)),
-                            Width =28,
-                            Height = 28,
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            Margin = new Thickness(0, 0, 0, 6)
-                        };
-
-                        var tempText = new TextBlock
-                        {
-                            Text = temp,
-                            Foreground = Brushes.Black,
-                            FontSize = 14,
-                            FontWeight = FontWeights.SemiBold,
-                            HorizontalAlignment = HorizontalAlignment.Center
-                        };
+                        var tempText = CreationUtil.CreateTextBlock(temp, Brushes.Black, 14, FontWeights.SemiBold, HorizontalAlignment.Center, new Thickness(0));
 
                         hourlyItem.Children.Add(timeText);
                         hourlyItem.Children.Add(weatherIcon);
@@ -218,14 +183,8 @@ namespace weatherapp
                         var itemIndex = hourlyForecastPanel.Children.Count - 1;
                         if (itemIndex < (weatherInfo.hourlyForecast.Take(6).Count() * 2) - 2)
                         {
-                            var separator = new Rectangle
-                            {
-                                Width = 0.5,
-                                Height = 60,
-                                Fill = new SolidColorBrush(Color.FromArgb(64, 0, 0, 0)),
-                                VerticalAlignment = VerticalAlignment.Center,
-                                Margin = new Thickness(8, 0, 8, 0)
-                            };
+                            var separator = CreationUtil.CreateRectangle(0.5, 60, new SolidColorBrush(Color.FromArgb(64, 0, 0, 0)), VerticalAlignment.Center, new Thickness(8, 0, 0, 8));
+
                             hourlyForecastPanel.Children.Add(separator);
                         }
                     }
