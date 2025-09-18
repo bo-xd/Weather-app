@@ -19,8 +19,7 @@
             </Rectangle>
         </Grid>
         
-        <!-- Main ScrollViewer for the entire content -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <Grid Margin="16,16,16,32">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -33,7 +32,7 @@
                 </Grid.RowDefinitions>
                 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0">
-                    <TextBlock x:Name="Location" Text="Cupertino" Foreground="White" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                    <TextBlock x:Name="Location" Text="Eindhoven" Foreground="White" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" Margin="0,0,0,5"/>
                     <Image x:Name="MainWeatherIcon" Width="80" Height="80" HorizontalAlignment="Center" Margin="0,10,0,10" Source="/Resources/CloudIcons/Clear.png"/>
                     <TextBlock x:Name="Temperature" Text="66°" Foreground="White" FontSize="85" FontWeight="UltraLight" HorizontalAlignment="Center" Margin="0,-15,0,0"/>
                     <TextBlock x:Name="WeatherDesc" Text="Mostly Sunny" Foreground="White" FontSize="20" FontWeight="Medium" HorizontalAlignment="Center" Margin="0,0,0,2"/>
@@ -48,7 +47,6 @@
                 <Border Grid.Row="4" Background="#50FFFFFF" CornerRadius="20" Padding="12,10" Height="90" Effect="{DynamicResource DropShadowEffect}">
                     <ScrollViewer x:Name="HourlyScrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" PreviewMouseWheel="HourlyScrollViewer_PreviewMouseWheel">
                         <StackPanel Orientation="Horizontal">
-                            <!-- Dynamic hourly forecast items will be added here via code-behind -->
                         </StackPanel>
                     </ScrollViewer>
                 </Border>
