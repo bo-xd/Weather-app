@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:weatherapp"
         mc:Ignorable="d"
         Title="Weather" Height="600" Width="350" MinHeight="600" MinWidth="350">
-    <Grid>
+    <Grid x:Name="RootGrid">
         <Grid>
             <Image x:Name="BackgroundImage" Source="/Resources/Weatherbg/sky.png" Stretch="UniformToFill"/>
             <Rectangle>
@@ -31,7 +31,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <StackPanel>
-                    <Image HorizontalAlignment="Right" Source="/Resources/Icons/gear.png" Width="30" Height="30" Opacity="0.5"></Image>
+                    <Image x:Name="Settings" HorizontalAlignment="Right" Source="/Resources/Icons/gear.png" Width="30" Height="30" Opacity="0.5" MouseLeftButtonDown="SettingsClick"></Image>
                 </StackPanel>
                 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0">
@@ -170,7 +170,25 @@
                 </Border>
             </Grid>
         </ScrollViewer>
-        
+
+        <Border x:Name="SettingsPanel"
+                Background="#CCFFFFFF"
+                CornerRadius="10"
+                Padding="20"
+                Visibility="Collapsed"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="250"
+                Height="200"
+                Effect="{DynamicResource DropShadowEffect}">
+            <StackPanel>
+                <TextBlock Text="Settings" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                <RadioButton Content="Fahrenheit" GroupName="TempUnit"/>
+                <RadioButton Content="Celsius" GroupName="TempUnit"/>
+                <Button Content="Close" Click="CloseSettings_Click" Margin="0,20,0,0"/>
+            </StackPanel>
+        </Border>
+
         <Grid.Resources>
             <DropShadowEffect x:Key="DropShadowEffect" Color="Black" BlurRadius="20" ShadowDepth="4" Opacity="0.25"/>
         </Grid.Resources>

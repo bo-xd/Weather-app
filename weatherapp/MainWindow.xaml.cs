@@ -154,5 +154,19 @@ namespace weatherapp
             useCelsius = !useCelsius;
             await LoadWeatherData();
         }
+
+        private void SettingsClick(object sender, MouseButtonEventArgs e)
+        {
+            var settingsPanel = RootGrid.FindName("SettingsPanel") as System.Windows.Controls.Border;
+            if (settingsPanel != null)
+                settingsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void CloseSettings_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsPanel = RootGrid.FindName("SettingsPanel") as System.Windows.Controls.Border;
+            if (settingsPanel != null)
+                settingsPanel.Visibility = Visibility.Collapsed;
+        }
     }
 }
