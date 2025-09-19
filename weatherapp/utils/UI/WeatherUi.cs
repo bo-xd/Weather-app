@@ -57,7 +57,7 @@ namespace weatherapp.utils.UI
             {
                 var con when con.Contains("Sunny") || con.Contains("clear") => "/Resources/Weatherbg/sky.png",
                 var con when con.Contains("heavy rain") || con.Contains("thunderstorm") || con.Contains("heavy rain") => "/Resources/Weatherbg/Thunder.jpg",
-                _ => "/Resources/weatherbg/sky.png"
+                _ => "/Resources/weatherbg/Cloudy.png"
             };
         }
 

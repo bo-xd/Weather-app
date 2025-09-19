@@ -33,9 +33,7 @@
     <None Remove="Resources\CloudIcons\Sunset.png" />
     <None Remove="Resources\CloudIcons\Thunderstorm.png" />
     <None Remove="Resources\CloudIcons\Windy.png" />
-    <None Remove="Resources\Weatherbg\Cloudy.jpg" />
     <None Remove="Resources\Weatherbg\sky.png" />
-    <None Remove="Resources\Weatherbg\Thunder.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -90,13 +88,13 @@
     <Resource Include="Resources\CloudIcons\Windy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Weatherbg\Cloudy.jpg">
+    <Resource Include="Resources\Weatherbg\Cloudy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Weatherbg\sky.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Weatherbg\Thunder.jpg">
+    <Resource Include="Resources\Weatherbg\Thunder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
