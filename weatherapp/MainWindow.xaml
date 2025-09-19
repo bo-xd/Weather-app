@@ -30,6 +30,9 @@
                     <RowDefinition Height="16"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                <StackPanel>
+                    <Image HorizontalAlignment="Right" Source="/Resources/Icons/gear.png" Width="30" Height="30" Opacity="0.8"></Image>
+                </StackPanel>
                 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0">
                     <TextBlock x:Name="Location" Text="Paris" Foreground="White" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" Margin="0,0,0,5"/>
@@ -70,7 +73,7 @@
                                 <TextBlock Text="Today" Grid.Column="0" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center"/>
                                 <Image Source="/Resources/CloudIcons/Clear.png" Grid.Column="1" Width="22" Height="22" VerticalAlignment="Center"/>
                                 <TextBlock Text="0%" Grid.Column="2" Foreground="#007AFF" FontSize="13" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                
+
                                 <Grid Grid.Column="3" Margin="12,0" VerticalAlignment="Center">
                                     <Rectangle Height="4" Fill="#E0E0E0" RadiusX="2" RadiusY="2"/>
                                     <Rectangle Height="4" Fill="#FF9500" RadiusX="2" RadiusY="2" Width="60" HorizontalAlignment="Left"/>
@@ -91,7 +94,7 @@
                                 <TextBlock Text="Thu" Grid.Column="0" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center"/>
                                 <Image Source="/Resources/CloudIcons/partlycloudy.png" Grid.Column="1" Width="22" Height="22" VerticalAlignment="Center"/>
                                 <TextBlock Text="10%" Grid.Column="2" Foreground="#007AFF" FontSize="13" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                
+
                                 <Grid Grid.Column="3" Margin="12,0" VerticalAlignment="Center">
                                     <Rectangle Height="4" Fill="#E0E0E0" RadiusX="2" RadiusY="2"/>
                                     <Rectangle Height="4" Fill="#FF9500" RadiusX="2" RadiusY="2" Width="55" HorizontalAlignment="Left"/>
@@ -99,7 +102,7 @@
                                 <TextBlock Text="56°" Grid.Column="4" Foreground="#666666" FontSize="15" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                                 <TextBlock Text="82°" Grid.Column="5" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                             </Grid>
-                            
+
                             <Grid Margin="0,4,0,4" Height="28">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="60"/>
@@ -112,7 +115,7 @@
                                 <TextBlock Text="Fri" Grid.Column="0" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center"/>
                                 <Image Source="/Resources/CloudIcons/Clear.png" Grid.Column="1" Width="22" Height="22" VerticalAlignment="Center"/>
                                 <TextBlock Text="0%" Grid.Column="2" Foreground="#007AFF" FontSize="13" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                
+
                                 <Grid Grid.Column="3" Margin="12,0" VerticalAlignment="Center">
                                     <Rectangle Height="4" Fill="#E0E0E0" RadiusX="2" RadiusY="2"/>
                                     <Rectangle Height="4" Fill="#FF9500" RadiusX="2" RadiusY="2" Width="65" HorizontalAlignment="Left"/>
@@ -133,7 +136,7 @@
                                 <TextBlock Text="Sat" Grid.Column="0" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center"/>
                                 <Image Source="/Resources/CloudIcons/Cloudy.png" Grid.Column="1" Width="22" Height="22" VerticalAlignment="Center"/>
                                 <TextBlock Text="20%" Grid.Column="2" Foreground="#007AFF" FontSize="13" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                
+
                                 <Grid Grid.Column="3" Margin="12,0" VerticalAlignment="Center">
                                     <Rectangle Height="4" Fill="#E0E0E0" RadiusX="2" RadiusY="2"/>
                                     <Rectangle Height="4" Fill="#FF9500" RadiusX="2" RadiusY="2" Width="58" HorizontalAlignment="Left"/>
@@ -154,7 +157,7 @@
                                 <TextBlock Text="Sun" Grid.Column="0" Foreground="Black" FontSize="15" FontWeight="Medium" VerticalAlignment="Center"/>
                                 <Image Source="/Resources/CloudIcons/Rain.png" Grid.Column="1" Width="22" Height="22" VerticalAlignment="Center"/>
                                 <TextBlock Text="60%" Grid.Column="2" Foreground="#007AFF" FontSize="13" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                
+
                                 <Grid Grid.Column="3" Margin="12,0" VerticalAlignment="Center">
                                     <Rectangle Height="4" Fill="#E0E0E0" RadiusX="2" RadiusY="2"/>
                                     <Rectangle Height="4" Fill="#FF9500" RadiusX="2" RadiusY="2" Width="50" HorizontalAlignment="Left"/>
