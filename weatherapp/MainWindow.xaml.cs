@@ -4,7 +4,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using weatherapp.utils;
+using weatherapp.utils.Api;
+using weatherapp.utils.UI;
 
 namespace weatherapp
 {
@@ -38,7 +39,7 @@ namespace weatherapp
 
                     WeatherDesc.Text = weatherInfo.condition;
 
-                    var mainIconPath = GetWeatherIconPath(weatherInfo.condition, weatherInfo.iconUrl);
+                    var mainIconPath = WeatherUi.GetWeatherIconPath(weatherInfo.condition, weatherInfo.iconUrl);
                     MainWeatherIcon.Source = new BitmapImage(new Uri(mainIconPath, UriKind.Relative));
 
                     if (useCelsius)
@@ -50,7 +51,9 @@ namespace weatherapp
                         HighLow.Text = $"H:{weatherInfo.maxtemp_f:F0}°  L:{weatherInfo.mintemp_f:F0}°";
                     }
 
-                    Summary.Text = GetWeatherSummary(weatherInfo.condition);
+                    Summary.Text = WeatherUi.GetWeatherSummary(weatherInfo.condition);
+                    var bgimage = WeatherUi.setWeatherBg(weatherInfo.condition);
+                    BackgroundImage.Source = new BitmapImage(new Uri(bgimage, UriKind.Relative));
 
                     UpdateHourlyForecast(weatherInfo);
                 }
@@ -74,72 +77,16 @@ namespace weatherapp
             }
         }
 
-        public void     settemp(bool Celsius, WeatherApi.WeatherInfo weatherInfo)
+        public void settemp(bool Celsius, WeatherApi.WeatherInfo weatherInfo)
         {
-            if (weatherInfo != null)
+        if (Celsius)
             {
-                if (Celsius)
-                {
-                    Temperature.Text = weatherInfo.temp_c + "°";
-                }
-                else
-                {
-                    Temperature.Text = weatherInfo.temp_f + "°";
-                }
+                Temperature.Text = weatherInfo.temp_c + "°";
             }
-        }
-
-        private string GetWeatherIconPath(string condition, string iconUrl = "")
-        {
-            var lowerCondition = condition?.ToLower() ?? "";
-            bool isNight = iconUrl.Contains("/night/");
-
-            return lowerCondition switch
+            else
             {
-                var c when c.Contains("sunny") || c.Contains("clear") => 
-                    isNight ? "/Resources/CloudIcons/clearnight.png" : "/Resources/CloudIcons/Clear.png",
-                
-                var c when c.Contains("partly cloudy") || c.Contains("partially cloudy") => 
-                    isNight ? "/Resources/CloudIcons/partycloudynight.png" : "/Resources/CloudIcons/partlycloudy.png",
-                
-                var c when c.Contains("cloudy") || c.Contains("overcast") => "/Resources/CloudIcons/Cloudy.png",
-                
-                var c when c.Contains("drizzle") || c.Contains("light rain") || c.Contains("patchy rain nearby") || c.Contains("light drizzle") => 
-                    isNight ? "/Resources/CloudIcons/Drizzlenight.png" : "/Resources/CloudIcons/Drizzle.png",
-                
-                var c when c.Contains("rain") || c.Contains("shower") || c.Contains("moderate rain") || c.Contains("heavy rain") => 
-                    "/Resources/CloudIcons/Rain.png",
-                
-                var c when c.Contains("heavy snow") || c.Contains("blizzard") => "/Resources/CloudIcons/Heavysnow.png",
-                var c when c.Contains("snow") || c.Contains("light snow") || c.Contains("moderate snow") => "/Resources/CloudIcons/Snow.png",
-                
-                var c when c.Contains("thunderstorm") || c.Contains("thunder") || c.Contains("thundery") => 
-                    "/Resources/CloudIcons/Thunderstorm.png",
-                
-                var c when c.Contains("fog") || c.Contains("mist") => "/Resources/CloudIcons/Fog.png",
-                
-                var c when c.Contains("haze") => "/Resources/CloudIcons/Haze.png",
-                
-                var c when c.Contains("freezing") || c.Contains("sleet") || c.Contains("ice pellets") => 
-                    "/Resources/CloudIcons/Freezingrain.png",
-                
-                var c when c.Contains("windy") || c.Contains("wind") => "/Resources/CloudIcons/Windy.png",
-                
-                _ => isNight ? "/Resources/CloudIcons/clearnight.png" : "/Resources/CloudIcons/Clear.png"
-            };
-        }
-
-        private string GetWeatherSummary(string condition)
-        {
-            return condition.ToLower() switch
-            {
-                var c when c.Contains("sunny") || c.Contains("clear") => "Sunny conditions will continue throughout the day. Perfect weather for outdoor activities.",
-                var c when c.Contains("cloudy") || c.Contains("overcast") => "Cloudy skies expected with comfortable temperatures.",
-                var c when c.Contains("rain") || c.Contains("shower") => "Rain is expected. Consider bringing an umbrella if going outside.",
-                var c when c.Contains("snow") => "Snow conditions expected. Drive carefully and dress warmly.",
-                var c when c.Contains("fog") || c.Contains("mist") => "Visibility may be reduced due to foggy conditions.",
-                _ => $"{condition} conditions expected for today."
-            };
+                Temperature.Text = weatherInfo.temp_f + "°";
+            }
         }
 
         private void UpdateHourlyForecast(WeatherApi.WeatherInfo weatherInfo)
@@ -163,7 +110,7 @@ namespace weatherapp
                         var temp = useCelsius ? $"{hour.temp_c:F0}°" : $"{hour.temp_f:F0}°";
                         var condition = hour.condition;
                         var rainChance = hour.chance_of_rain;
-                        var iconPath = GetWeatherIconPath(condition, hour.iconUrl);
+                        var iconPath = WeatherUi.GetWeatherIconPath(condition, hour.iconUrl);
 
                         System.Diagnostics.Debug.WriteLine($"Adding hour: {time}, Temp: {temp}, Condition: {condition}");
 

@@ -8,7 +8,7 @@
         Title="Weather" Height="600" Width="350" MinHeight="600" MinWidth="350">
     <Grid>
         <Grid>
-            <Image Source="/Resources/Weatherbg/sky.png" Stretch="UniformToFill"/>
+            <Image x:Name="BackgroundImage" Source="/Resources/Weatherbg/sky.png" Stretch="UniformToFill"/>
             <Rectangle>
                 <Rectangle.Fill>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

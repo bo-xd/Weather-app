@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 
-namespace weatherapp.utils
+namespace weatherapp.utils.Api
 {
     public class WeatherApi
     {

@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
 
-namespace weatherapp.utils
+namespace weatherapp.utils.Api
 {
     public class RequestUtil
     {
