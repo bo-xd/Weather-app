@@ -31,7 +31,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <StackPanel>
-                    <Image HorizontalAlignment="Right" Source="/Resources/Icons/gear.png" Width="30" Height="30" Opacity="0.8"></Image>
+                    <Image HorizontalAlignment="Right" Source="/Resources/Icons/gear.png" Width="30" Height="30" Opacity="0.5"></Image>
                 </StackPanel>
                 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,0">
